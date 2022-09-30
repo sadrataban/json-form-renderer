@@ -1,0 +1,7 @@
+{
+  "name": "form-creator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
