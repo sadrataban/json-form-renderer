@@ -1,0 +1,23 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <ion-item *ngFor="let control of jsonFormData.steps[currentStep - 1].items"
+    ><ion-label>{{ control.label }}</ion-label
+    ><ion-input
+      *ngIf="control.type !== 'file'; else fileInput"
+      [type]="control.type"
+      [formControlName]="control.name"
+      [value]="control.defaultValue"
+      [placeholder]="control.placeholder"
+    ></ion-input>
+    <ng-template #fileInput>
+      <input type="text" hidden />
+      <ion-button (click)="onTakePhoto(control.name)">Choose Image</ion-button>
+    </ng-template>
+  </ion-item>
+
+  <ion-button
+    [type]="currentStep === jsonFormData.steps.length ? 'submit' : 'button'"
+    >{{
+      currentStep === jsonFormData.steps.length ? "Submit" : "Next"
+    }}</ion-button
+  >
+</form>
