@@ -9,8 +9,8 @@
       [placeholder]="control.placeholder"
     ></ion-input>
     <ng-template #fileInput>
-      <input type="text" hidden />
-      <ion-button (click)="onTakePhoto(control.name)">Choose Image</ion-button>
+      <input type="file" accept="image/*;capture=camera" />
+      <!-- <ion-button (click)="onTakePhoto(control.name)">Choose Image</ion-button> -->
     </ng-template>
   </ion-item>
 
